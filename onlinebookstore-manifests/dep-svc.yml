@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: onlinebookstore
-          image: mvmadhan/tomcat:replaceImageTag
+          image: mvmadhan/tomcat:3
           ports:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
