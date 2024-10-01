@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: onlinebookstore
-          image: mvmadhan/tomcat:6
+          image: mvmadhan/tomcat:replaceImageTag
           ports:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
@@ -42,7 +42,7 @@ spec:
                   name : mysql-secrets
                   key :  password
 
---------
+---
 
 apiVersion: v1
 kind: Service
