@@ -39,7 +39,7 @@ pipeline {
         stage('Update Deployment File') {
             environment {
                 GIT_REPO_NAME = "onlinebookstore"
-                GIT_USER_NAME = "mvMadhan"
+                GIT_USER_NAME = "Shivakumarmv"
             }
             steps {
                 withCredentials([string(credentialsId: 'github-cred', variable: 'GITHUB_TOKEN')]) {
@@ -48,7 +48,7 @@ pipeline {
                     git config user.name "madhan shiva"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" onlinebookstore-manifests/dep-svc.yml
-                    git add onlinebookstore-manifests/deployment.yml
+                    git add onlinebookstore-manifests/dep-svc.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
                     '''
